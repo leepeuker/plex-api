@@ -3,14 +3,14 @@
 namespace PlexApi\Tests\Unit\ValueObject\Section;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\LocationList;
 use PlexApi\ValueObject\Section\Directory;
+use PlexApi\ValueObject\SectionContent\LocationList;
 
 /**
  * @covers \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\Location
- * @uses   \PlexApi\ValueObject\LocationList
+ * @uses   \PlexApi\ValueObject\SectionContent\Location
+ * @uses   \PlexApi\ValueObject\SectionContent\LocationList
  */
 class DirectoryTest extends TestCase
 {

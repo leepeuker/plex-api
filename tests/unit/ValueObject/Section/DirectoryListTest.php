@@ -9,10 +9,10 @@ use PlexApi\ValueObject\Section\DirectoryList;
 /**
  * @covers \PlexApi\ValueObject\Section\DirectoryList
  * @covers \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\Location
- * @uses   \PlexApi\ValueObject\LocationList
  * @uses   \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\Section\DirectoryList
+ * @uses   \PlexApi\ValueObject\SectionContent\Location
+ * @uses   \PlexApi\ValueObject\SectionContent\LocationList
  */
 class DirectoryListTest extends TestCase
 {

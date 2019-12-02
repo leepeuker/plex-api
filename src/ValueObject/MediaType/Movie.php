@@ -153,7 +153,7 @@ class Movie extends MediaType
             isset($element['chapterSource']) === true ? (string)$element['chapterSource'] : null,
             isset($element['primaryExtraKey']) === true ? (string)$element['primaryExtraKey'] : null,
             isset($element['ratingImage']) === true ? (string)$element['ratingImage'] : null,
-            MediaList::createFromArray($element['Media']),
+            MediaList::createFromArray((array)$element['Media']),
             isset($element['Genre']) === true ? (array)$element['Genre'] : null,
             isset($element['Director']) === true ? (array)$element['Director'] : null,
             isset($element['Writer']) === true ? (array)$element['Writer'] : null,

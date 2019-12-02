@@ -171,7 +171,7 @@ class MediaContainer
         return $this->librarySectionTitle;
     }
 
-    public function isNoCache() : bool
+    public function isNoCache() : ?bool
     {
         return $this->noCache;
     }
