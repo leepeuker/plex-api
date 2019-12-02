@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Media;
+namespace PlexApi\ValueObject\MediaType;
 
-class Movie
+use PlexApi\ValueObject\MediaList;
+
+class Movie extends MediaType
 {
     public const TYPE = 'movie';
 
@@ -30,7 +32,7 @@ class Movie
 
     private ?int $lastViewedAt;
 
-    private array $media;
+    private MediaList $mediaList;
 
     private ?string $originallyAvailableAt;
 
@@ -87,7 +89,7 @@ class Movie
         ?string $chapterSource,
         ?string $primaryExtraKey,
         ?string $ratingImage,
-        array $media,
+        MediaList $mediaList,
         ?array $genre,
         ?array $director,
         ?array $writer,
@@ -117,7 +119,7 @@ class Movie
         $this->chapterSource = $chapterSource;
         $this->primaryExtraKey = $primaryExtraKey;
         $this->ratingImage = $ratingImage;
-        $this->media = $media;
+        $this->mediaList = $mediaList;
         $this->genre = $genre;
         $this->director = $director;
         $this->writer = $writer;
@@ -151,7 +153,7 @@ class Movie
             isset($element['chapterSource']) === true ? (string)$element['chapterSource'] : null,
             isset($element['primaryExtraKey']) === true ? (string)$element['primaryExtraKey'] : null,
             isset($element['ratingImage']) === true ? (string)$element['ratingImage'] : null,
-            (array)$element['Media'],
+            MediaList::createFromArray($element['Media']),
             isset($element['Genre']) === true ? (array)$element['Genre'] : null,
             isset($element['Director']) === true ? (array)$element['Director'] : null,
             isset($element['Writer']) === true ? (array)$element['Writer'] : null,
@@ -221,9 +223,9 @@ class Movie
         return $this->lastViewedAt;
     }
 
-    public function getMedia() : array
+    public function getMediaList() : MediaList
     {
-        return $this->media;
+        return $this->mediaList;
     }
 
     public function getOriginallyAvailableAt() : ?string

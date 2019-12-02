@@ -2,7 +2,7 @@
 
 namespace PlexApi\ValueObject\Section;
 
-use PlexApi\ValueObject\LocationList;
+use PlexApi\ValueObject\SectionContent\LocationList;
 
 class Directory
 {

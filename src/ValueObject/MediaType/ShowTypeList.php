@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Media;
+namespace PlexApi\ValueObject\MediaType;
 
-class ShowList extends MediaList
+class ShowTypeList extends MediaTypeList
 {
     public static function create() : self
     {

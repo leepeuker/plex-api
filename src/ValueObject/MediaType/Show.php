@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Media;
+namespace PlexApi\ValueObject\MediaType;
 
-class Show
+class Show extends MediaType
 {
     public const TYPE = 'show';
 

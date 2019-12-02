@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Media;
+namespace PlexApi\ValueObject;
 
-class MovieList extends MediaList
+class PartList extends AbstractList
 {
     public static function create() : self
     {
@@ -13,15 +13,15 @@ class MovieList extends MediaList
     {
         $list = self::create();
 
-        foreach ($movies as $movie) {
-            $list->add(Movie::createFromArray((array)$movie));
+        foreach ($movies as $part) {
+            $list->add(Part::createFromArray((array)$part));
         }
 
         return $list;
     }
 
-    public function add(Movie $movie) : void
+    public function add(Part $part) : void
     {
-        $this->data[] = $movie;
+        $this->data[] = $part;
     }
 }

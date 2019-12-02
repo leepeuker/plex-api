@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject;
+namespace PlexApi\ValueObject\SectionContent;
 
 use PlexApi\ValueObject\AbstractList;
 

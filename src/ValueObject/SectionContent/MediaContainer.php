@@ -2,7 +2,7 @@
 
 namespace PlexApi\ValueObject\SectionContent;
 
-use PlexApi\ValueObject\Media\MediaList;
+use PlexApi\ValueObject\MediaType\MediaTypeList;
 
 class MediaContainer
 {
@@ -22,7 +22,7 @@ class MediaContainer
 
     private string $mediaTagVersion;
 
-    private MediaList $metadata;
+    private MediaTypeList $metadata;
 
     private ?bool $noCache;
 
@@ -54,7 +54,7 @@ class MediaContainer
         string $title2,
         string $viewGroup,
         string $viewMode,
-        MediaList $metadata
+        MediaTypeList $metadata
     ) {
         $this->size = $size;
         $this->allowSync = $allowSync;
@@ -92,7 +92,7 @@ class MediaContainer
             (string)$sections['title2'],
             (string)$sections['viewGroup'],
             (string)$sections['viewMode'],
-            MediaList::createFromArrayWithType((array)$sections['Metadata'], (string)$sections['viewGroup']),
+            MediaTypeList::createFromArrayWithType((array)$sections['Metadata'], (string)$sections['viewGroup']),
         );
     }
 
@@ -126,7 +126,7 @@ class MediaContainer
         return $this->mediaTagVersion;
     }
 
-    public function getMetadata() : MediaList
+    public function getMetadata() : MediaTypeList
     {
         return $this->metadata;
     }
