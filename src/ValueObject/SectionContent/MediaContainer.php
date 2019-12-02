@@ -24,7 +24,7 @@ class MediaContainer
 
     private MediaList $metadata;
 
-    private bool $noCache;
+    private ?bool $noCache;
 
     private int $size;
 
@@ -48,7 +48,7 @@ class MediaContainer
         string $librarySectionUuid,
         string $mediaTagPrefix,
         string $mediaTagVersion,
-        bool $noCache,
+        ?bool $noCache,
         string $thumb,
         string $title1,
         string $title2,
@@ -86,7 +86,7 @@ class MediaContainer
             (string)$sections['librarySectionUUID'],
             (string)$sections['mediaTagPrefix'],
             (string)$sections['mediaTagVersion'],
-            (bool)$sections['nocache'],
+            isset($sections['nocache']) === true ? (bool)$sections['nocache'] : null,
             (string)$sections['thumb'],
             (string)$sections['title1'],
             (string)$sections['title2'],
