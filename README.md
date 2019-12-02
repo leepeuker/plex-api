@@ -1,5 +1,6 @@
-### Plex API for PHP
+### A php wrapper for the plex rest api
 ___
+
 #### Installing via Composer
 `composer require leepe/plex-api`
 

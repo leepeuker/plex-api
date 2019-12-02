@@ -2,6 +2,7 @@
   "name": "leepe/api-plex",
   "keywords": ["plex", "api"],
   "homepage": "https://github.com/leepeuker/plex-api",
+  "description": "A php wrapper for the plex rest api.",
   "license": "MIT",
   "authors": [
     {
