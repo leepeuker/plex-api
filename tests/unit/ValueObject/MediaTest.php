@@ -116,8 +116,8 @@ class MediaTest extends TestCase
         $this->assertEquals($this->data['width'], $this->media->getWidth());
     }
 
-    public function testHas64bitOffsets() : void
+    public function testIsHas64bitOffsets() : void
     {
-        $this->assertEquals($this->data['has64bitOffsets'], $this->media->has64bitOffsets());
+        $this->assertEquals($this->data['has64bitOffsets'], $this->media->isHas64bitOffsets());
     }
 }

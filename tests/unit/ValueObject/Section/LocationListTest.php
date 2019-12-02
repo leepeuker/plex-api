@@ -28,13 +28,9 @@ class LocationListTest extends TestCase
             [
                 'id' => 42,
                 'path' => 'foobar',
-            ],
-            [
-                'id' => 84,
-                'path' => 'foobar',
-            ],
+            ]
         ];
 
-        $this->assertCount(2, LocationList::createFromArray($data));
+        $this->assertCount(1, LocationList::createFromArray($data));
     }
 }

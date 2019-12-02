@@ -169,7 +169,7 @@ class Media
         return $this->width;
     }
 
-    public function has64bitOffsets() : ?bool
+    public function isHas64bitOffsets() : ?bool
     {
         return $this->has64bitOffsets;
     }
