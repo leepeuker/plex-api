@@ -4,13 +4,13 @@ namespace PlexApi\Tests\Unit\ValueObject\Section;
 
 use PHPUnit\Framework\TestCase;
 use PlexApi\ValueObject\Section\Directory;
-use PlexApi\ValueObject\SectionContent\LocationList;
+use PlexApi\ValueObject\Section\LocationList;
 
 /**
  * @covers \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\SectionContent\Location
- * @uses   \PlexApi\ValueObject\SectionContent\LocationList
+ * @uses   \PlexApi\ValueObject\Section\Location
+ * @uses   \PlexApi\ValueObject\Section\LocationList
  */
 class DirectoryTest extends TestCase
 {
@@ -20,35 +20,9 @@ class DirectoryTest extends TestCase
 
     public function setUp() : void
     {
-        $this->data = [
-            'allowSync' => false,
-            'art' => '/:/resources/show-fanart.jpg',
-            'composite' => '/library/sections/9/composite/1573945582',
-            'filters' => true,
-            'refreshing' => false,
-            'thumb' => '/:/resources/show.png',
-            'key' => '9',
-            'type' => 'show',
-            'title' => 'Animes',
-            'agent' => 'com.plexapp.agents.themoviedb',
-            'scanner' => 'Plex Series Scanner',
-            'language' => 'en',
-            'uuid' => '1ef7230a-2dfd-48af-90d3-4a31f455409d',
-            'updatedAt' => 1573941032,
-            'createdAt' => 1573941000,
-            'scannedAt' => 1573945582,
-            'content' => true,
-            'directory' => true,
-            'contentChangedAt' => 2783569,
-            'Location' => [
-                [
-                    'id' => 12,
-                    'path' => '/mnt/animes',
-                ],
-            ],
-        ];
+        $this->data = json_decode($this->getTestData(), true, 512, JSON_THROW_ON_ERROR)['Directory'][0];
 
-        $this->dto = Directory::createFromArray($this->data);
+        $this->dto = Directory::createFromArray((array)$this->data);
     }
 
     public function testGetAgent() : void
@@ -149,5 +123,10 @@ class DirectoryTest extends TestCase
     public function testIsRefreshing() : void
     {
         $this->assertSame($this->data['refreshing'], $this->dto->isRefreshing());
+    }
+
+    private function getTestData() : string
+    {
+        return (string)file_get_contents(__DIR__ . '/../../../resources/librarySectionResponse.json');
     }
 }

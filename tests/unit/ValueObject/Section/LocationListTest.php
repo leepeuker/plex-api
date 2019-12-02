@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\Tests\Unit\ValueObject\SectionContent;
+namespace PlexApi\Tests\Unit\ValueObject\Section;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\SectionContent\Location;
-use PlexApi\ValueObject\SectionContent\LocationList;
+use PlexApi\ValueObject\Section\Location;
+use PlexApi\ValueObject\Section\LocationList;
 
 /**
- * @covers \PlexApi\ValueObject\SectionContent\LocationList
+ * @covers \PlexApi\ValueObject\Section\LocationList
  * @covers \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\SectionContent\Location
+ * @uses   \PlexApi\ValueObject\Section\Location
  */
 class LocationListTest extends TestCase
 {

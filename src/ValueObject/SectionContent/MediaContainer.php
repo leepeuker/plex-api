@@ -20,7 +20,7 @@ class MediaContainer
 
     private string $mediaTagPrefix;
 
-    private string $mediaTagVersion;
+    private int $mediaTagVersion;
 
     private MediaTypeList $metadata;
 
@@ -36,7 +36,7 @@ class MediaContainer
 
     private string $viewGroup;
 
-    private string $viewMode;
+    private int $viewMode;
 
     private function __construct(
         int $size,
@@ -47,13 +47,13 @@ class MediaContainer
         string $librarySectionTitle,
         string $librarySectionUuid,
         string $mediaTagPrefix,
-        string $mediaTagVersion,
+        int $mediaTagVersion,
         ?bool $noCache,
         string $thumb,
         string $title1,
         string $title2,
         string $viewGroup,
-        string $viewMode,
+        int $viewMode,
         MediaTypeList $metadata
     ) {
         $this->size = $size;
@@ -85,13 +85,13 @@ class MediaContainer
             (string)$sections['librarySectionTitle'],
             (string)$sections['librarySectionUUID'],
             (string)$sections['mediaTagPrefix'],
-            (string)$sections['mediaTagVersion'],
+            (int)$sections['mediaTagVersion'],
             isset($sections['nocache']) === true ? (bool)$sections['nocache'] : null,
             (string)$sections['thumb'],
             (string)$sections['title1'],
             (string)$sections['title2'],
             (string)$sections['viewGroup'],
-            (string)$sections['viewMode'],
+            (int)$sections['viewMode'],
             MediaTypeList::createFromArrayWithType((array)$sections['Metadata'], (string)$sections['viewGroup']),
         );
     }
@@ -121,7 +121,7 @@ class MediaContainer
         return $this->mediaTagPrefix;
     }
 
-    public function getMediaTagVersion() : string
+    public function getMediaTagVersion() : int
     {
         return $this->mediaTagVersion;
     }
@@ -156,7 +156,7 @@ class MediaContainer
         return $this->viewGroup;
     }
 
-    public function getViewMode() : string
+    public function getViewMode() : int
     {
         return $this->viewMode;
     }

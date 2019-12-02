@@ -2,8 +2,6 @@
 
 namespace PlexApi\ValueObject\Section;
 
-use PlexApi\ValueObject\SectionContent\LocationList;
-
 class Directory
 {
     private string $agent;

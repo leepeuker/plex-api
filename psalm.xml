@@ -36,6 +36,11 @@
                 <directory name="tests/unit/"/>
             </errorLevel>
         </PossiblyInvalidArgument>
+        <MixedArrayAccess>
+            <errorLevel type="suppress">
+                <directory name="tests/unit/"/>
+            </errorLevel>
+        </MixedArrayAccess>
     </issueHandlers>
 
     <plugins>

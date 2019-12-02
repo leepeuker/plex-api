@@ -10,9 +10,9 @@ abstract class MediaTypeList extends AbstractList
     {
         switch ($type) {
             case Show::TYPE:
-                return ShowTypeList::createFromArray($data);
+                return ShowList::createFromArray($data);
             case Movie::TYPE:
-                return MovieTypeList::createFromArray($data);
+                return MovieList::createFromArray($data);
             default:
                 throw new \DomainException('Unknown media type: ' . $type);
         }

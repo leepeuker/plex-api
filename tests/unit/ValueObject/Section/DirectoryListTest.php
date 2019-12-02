@@ -11,8 +11,8 @@ use PlexApi\ValueObject\Section\DirectoryList;
  * @covers \PlexApi\ValueObject\AbstractList
  * @uses   \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\Section\DirectoryList
- * @uses   \PlexApi\ValueObject\SectionContent\Location
- * @uses   \PlexApi\ValueObject\SectionContent\LocationList
+ * @uses   \PlexApi\ValueObject\Section\Location
+ * @uses   \PlexApi\ValueObject\Section\LocationList
  */
 class DirectoryListTest extends TestCase
 {
@@ -27,34 +27,13 @@ class DirectoryListTest extends TestCase
 
     public function testCreateFromArray() : void
     {
-        $data = [
-            'allowSync' => false,
-            'art' => '/:/resources/show-fanart.jpg',
-            'composite' => '/library/sections/9/composite/1573945582',
-            'filters' => true,
-            'refreshing' => false,
-            'thumb' => '/:/resources/show.png',
-            'key' => '9',
-            'type' => 'show',
-            'title' => 'Animes',
-            'agent' => 'com.plexapp.agents.themoviedb',
-            'scanner' => 'Plex Series Scanner',
-            'language' => 'en',
-            'uuid' => '1ef7230a-2dfd-48af-90d3-4a31f455409d',
-            'updatedAt' => 1573941032,
-            'createdAt' => 1573941000,
-            'scannedAt' => 1573945582,
-            'content' => true,
-            'directory' => true,
-            'contentChangedAt' => 2783569,
-            'Location' => [
-                [
-                    'id' => 12,
-                    'path' => '/mnt/animes',
-                ],
-            ],
-        ];
+        $data = (array)json_decode($this->getTestData(), true, 512, JSON_THROW_ON_ERROR)['Directory'];
 
-        $this->assertCount(2, DirectoryList::createFromArray([$data, $data]));
+        $this->assertCount(2, DirectoryList::createFromArray((array)$data));
+    }
+
+    private function getTestData() : string
+    {
+        return (string)file_get_contents(__DIR__ . '/../../../resources/librarySectionResponse.json');
     }
 }

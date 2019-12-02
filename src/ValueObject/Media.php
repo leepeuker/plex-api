@@ -82,7 +82,7 @@ class Media
             isset($data['height']) === true ? (int)$data['height'] : null,
             isset($data['aspectRatio']) === true ? (float)$data['aspectRatio'] : null,
             isset($data['audioChannels']) === true ? (int)$data['audioChannels'] : null,
-            isset($data['audioChannels']) === true ? (string)$data['audioChannels'] : null,
+            isset($data['audioCodec']) === true ? (string)$data['audioCodec'] : null,
             isset($data['videoCodec']) === true ? (string)$data['videoCodec'] : null,
             isset($data['videoResolution']) === true ? (string)$data['videoResolution'] : null,
             isset($data['container']) === true ? (string)$data['container'] : null,

@@ -2,7 +2,7 @@
 
 namespace PlexApi\ValueObject\MediaType;
 
-class MovieTypeList extends MediaTypeList
+class MovieList extends MediaTypeList
 {
     public static function create() : self
     {
