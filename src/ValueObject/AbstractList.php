@@ -2,6 +2,9 @@
 
 namespace PlexApi\ValueObject;
 
+/**
+ * @codeCoverageIgnore
+ */
 abstract class AbstractList implements \Countable, \IteratorAggregate, \JsonSerializable
 {
     protected array $data;

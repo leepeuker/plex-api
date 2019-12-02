@@ -131,6 +131,11 @@ class Dto
         return $this->composite;
     }
 
+    public function getContentChangedAt() : int
+    {
+        return $this->contentChangedAt;
+    }
+
     public function getCreatedAt() : int
     {
         return $this->createdAt;
@@ -159,6 +164,11 @@ class Dto
     public function getScanner() : string
     {
         return $this->scanner;
+    }
+
+    public function getThumb() : string
+    {
+        return $this->thumb;
     }
 
     public function getTitle() : string
@@ -191,11 +201,6 @@ class Dto
         return $this->content;
     }
 
-    public function isContentChangedAt() : int
-    {
-        return $this->contentChangedAt;
-    }
-
     public function isDirectory() : bool
     {
         return $this->directory;
@@ -209,10 +214,5 @@ class Dto
     public function isRefreshing() : bool
     {
         return $this->refreshing;
-    }
-
-    public function isThumb() : string
-    {
-        return $this->thumb;
     }
 }
