@@ -19,26 +19,9 @@ class MediaTest extends TestCase
 
     public function setUp() : void
     {
-        $this->data = [
-            'id' => 42,
-            'duration' => 4235241,
-            'bitrate' => 24123,
-            'width' => 10,
-            'height' => 20,
-            'aspectRatio' => 2.45,
-            'audioChannels' => 3,
-            'audioCodec' => 'foobar',
-            'videoCodec' => 'foobar',
-            'videoResolution' => 'foobar',
-            'container' => 'foobar',
-            'videoFrameRate' => 'foobar',
-            'audioProfile' => 'foobar',
-            'videoProfile' => 'foobar',
-            'Part' => [],
-            'has64bitOffsets' => false,
-        ];
+        $this->data = json_decode($this->getTestData(), true, 512, JSON_THROW_ON_ERROR)['Metadata'][0]['Media'][0];
 
-        $this->media = Media::createFromArray($this->data);
+        $this->media = Media::createFromArray((array)$this->data);
     }
 
     public function testGetAspectRatio() : void
@@ -118,6 +101,11 @@ class MediaTest extends TestCase
 
     public function testIsHas64bitOffsets() : void
     {
-        $this->assertEquals($this->data['has64bitOffsets'], $this->media->isHas64bitOffsets());
+        $this->assertNull($this->media->isHas64bitOffsets());
+    }
+
+    private function getTestData() : string
+    {
+        return (string)file_get_contents(__DIR__ . '/../../resources/librarySectionContentMovieResponse.json');
     }
 }

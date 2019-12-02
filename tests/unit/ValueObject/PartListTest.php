@@ -24,20 +24,13 @@ class PartListTest extends TestCase
 
     public function testCreateFromArray() : void
     {
-        $data = [
-            [
-                'id' => 42,
-                'key' => 'foobar',
-                'duration' => 4235241,
-                'file' => '/file',
-                'size' => 100,
-                'container' => 'foobar',
-                'videoProfile' => 'videoProfile',
-                'audioProfile' => 'audioProfile',
-                'has64bitOffsets' => false,
-            ],
-        ];
+        $data = json_decode($this->getTestData(), true, 512, JSON_THROW_ON_ERROR)['Metadata'][0]['Media'][0]['Part'];
 
-        $this->assertCount(1, PartList::createFromArray($data));
+        $this->assertCount(1, PartList::createFromArray((array)$data));
+    }
+
+    private function getTestData() : string
+    {
+        return (string)file_get_contents(__DIR__ . '/../../resources/librarySectionContentMovieResponse.json');
     }
 }

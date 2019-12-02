@@ -107,6 +107,6 @@ class MediaContainerTest extends TestCase
 
     private function getTestData() : string
     {
-        return (string)file_get_contents(__DIR__ . '/../../../resources/librarySectionContentResponse.json');
+        return (string)file_get_contents(__DIR__ . '/../../../resources/librarySectionContentShowResponse.json');
     }
 }

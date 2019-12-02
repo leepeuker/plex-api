@@ -1,0 +1,112 @@
+{
+  "size": 1,
+  "allowSync": true,
+  "art": "\/:\/resources\/movie-fanart.jpg",
+  "identifier": "com.plexapp.plugins.library",
+  "librarySectionID": 2,
+  "librarySectionTitle": "Movies",
+  "librarySectionUUID": "14bdb0b9-3296-465f-9389-93dae29695ca",
+  "mediaTagPrefix": "\/system\/bundle\/media\/flags\/",
+  "mediaTagVersion": 1574417685,
+  "thumb": "\/:\/resources\/movie.png",
+  "title1": "Movies",
+  "title2": "All Movies",
+  "viewGroup": "movie",
+  "viewMode": 65592,
+  "Metadata": [
+    {
+      "ratingKey": "24531",
+      "key": "\/library\/metadata\/24531",
+      "guid": "com.plexapp.agents.themoviedb:\/\/299534?lang=en",
+      "studio": "Marvel Studios",
+      "type": "movie",
+      "title": "Avengers: Endgame",
+      "contentRating": "PG-13",
+      "summary": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+      "rating": 8.3,
+      "year": 2019,
+      "tagline": "Part of the journey is the end.",
+      "thumb": "\/library\/metadata\/24531\/thumb\/1570300975",
+      "art": "\/library\/metadata\/24531\/art\/1570420975",
+      "duration": 10871582,
+      "originallyAvailableAt": "2019-04-22",
+      "addedAt": 1570200917,
+      "updatedAt": 1570200975,
+      "Media": [
+        {
+          "id": 45698,
+          "duration": 10871582,
+          "bitrate": 2915,
+          "width": 3840,
+          "height": 1616,
+          "aspectRatio": 2.35,
+          "audioChannels": 8,
+          "audioCodec": "aac",
+          "videoCodec": "hevc",
+          "videoResolution": "4k",
+          "container": "mkv",
+          "videoFrameRate": "24p",
+          "audioProfile": "he-aac",
+          "videoProfile": "main 10",
+          "Part": [
+            {
+              "id": 57784,
+              "key": "\/library\/parts\/57784\/1564901677\/file.mkv",
+              "duration": 10871582,
+              "file": "\/media\/movies_4k\/Avengers Endgame (2019)\/Avengers.Endgame.2019.2160p.10bit.HDR.BluRay.8CH.x265.HEVC-PSA.mkv",
+              "size": 3964985011,
+              "audioProfile": "he-aac",
+              "container": "mkv",
+              "videoProfile": "main 10"
+            }
+          ]
+        }
+      ],
+      "Genre": [
+        {
+          "tag": "Adventure"
+        },
+        {
+          "tag": "Science Fiction"
+        }
+      ],
+      "Director": [
+        {
+          "tag": "Joe Russo"
+        },
+        {
+          "tag": "Anthony Russo"
+        }
+      ],
+      "Writer": [
+        {
+          "tag": "Christopher Markus"
+        },
+        {
+          "tag": "Stephen McFeely"
+        }
+      ],
+      "Country": [
+        {
+          "tag": "USA"
+        }
+      ],
+      "Collection": [
+        {
+          "tag": "The Avengers"
+        }
+      ],
+      "Role": [
+        {
+          "tag": "Robert Downey Jr."
+        },
+        {
+          "tag": "Chris Evans"
+        },
+        {
+          "tag": "Mark Ruffalo"
+        }
+      ]
+    }
+  ]
+}

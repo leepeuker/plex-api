@@ -16,19 +16,9 @@ class PartTest extends TestCase
 
     public function setUp() : void
     {
-        $this->data = [
-            'id' => 42,
-            'key' => 'foobar',
-            'duration' => 4235241,
-            'file' => '/file',
-            'size' => 100,
-            'container' => 'foobar',
-            'videoProfile' => 'videoProfile',
-            'audioProfile' => 'audioProfile',
-            'has64bitOffsets' => false,
-        ];
+        $this->data = json_decode($this->getTestData(), true, 512, JSON_THROW_ON_ERROR)['Metadata'][0]['Media'][0]['Part'][0];
 
-        $this->part = Part::createFromArray($this->data);
+        $this->part = Part::createFromArray((array)$this->data);
     }
 
     public function testGetAudioProfile() : void
@@ -73,6 +63,11 @@ class PartTest extends TestCase
 
     public function testIsHas64bitOffset() : void
     {
-        $this->assertEquals($this->data['has64bitOffsets'], $this->part->isHas64bitOffsets());
+        $this->assertNull($this->part->isHas64bitOffsets());
+    }
+
+    private function getTestData() : string
+    {
+        return (string)file_get_contents(__DIR__ . '/../../resources/librarySectionContentMovieResponse.json');
     }
 }
