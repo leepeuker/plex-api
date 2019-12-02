@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Location;
+namespace PlexApi\ValueObject;
 
 use PlexApi\ValueObject\AbstractList;
 
 /**
- * @method Dto[] getIterator() : \ArrayIterator
+ * @method Location[] getIterator() : \ArrayIterator
  * @psalm-suppress ImplementedReturnTypeMismatch
  */
-class DtoList extends AbstractList
+class LocationList extends AbstractList
 {
     public static function create() : self
     {
@@ -23,13 +23,13 @@ class DtoList extends AbstractList
          * @psalm-suppress MixedAssignment
          */
         foreach ($sections as $section) {
-            $list->add(Dto::createFromArray((array)$section));
+            $list->add(Location::createFromArray((array)$section));
         }
 
         return $list;
     }
 
-    public function add(Dto $section) : void
+    public function add(Location $section) : void
     {
         $this->data[] = $section;
     }

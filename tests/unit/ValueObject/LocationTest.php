@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\Tests\ValueObject\Location;
+namespace PlexApi\Tests\Unit\ValueObject;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\Location\Dto;
+use PlexApi\ValueObject\Location;
 
 /**
- * @covers \PlexApi\ValueObject\Location\Dto
+ * @covers \PlexApi\ValueObject\Location
  */
-class DtoTest extends TestCase
+class LocationTest extends TestCase
 {
     private array $data;
 
-    private Dto $dto;
+    private Location $dto;
 
     public function setUp() : void
     {
@@ -21,7 +21,7 @@ class DtoTest extends TestCase
             'path' => 'foobar',
         ];
 
-        $this->dto = Dto::createFromArray($this->data);
+        $this->dto = Location::createFromArray($this->data);
     }
 
     public function testGetId() : void

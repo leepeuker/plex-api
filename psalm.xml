@@ -8,10 +8,37 @@
 >
     <projectFiles>
         <directory name="src" />
-        <directory name="tests"/>
+        <directory name="tests/unit"/>
     </projectFiles>
 
     <issueHandlers>
         <PropertyNotSetInConstructor errorLevel="suppress"/>
+        <MixedAssignment errorLevel="suppress"/>
+
+        <!-- Unit test exceptions-->
+        <InternalMethod>
+            <errorLevel type="suppress">
+                <directory name="tests/unit/"/>
+            </errorLevel>
+        </InternalMethod>
+        <PossiblyUndefinedMethod>
+            <errorLevel type="suppress">
+                <directory name="tests/unit/"/>
+            </errorLevel>
+        </PossiblyUndefinedMethod>
+        <RedundantCondition>
+            <errorLevel type="suppress">
+                <directory name="tests/unit/"/>
+            </errorLevel>
+        </RedundantCondition>
+        <PossiblyInvalidArgument>
+            <errorLevel type="suppress">
+                <directory name="tests/unit/"/>
+            </errorLevel>
+        </PossiblyInvalidArgument>
     </issueHandlers>
+
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    </plugins>
 </psalm>

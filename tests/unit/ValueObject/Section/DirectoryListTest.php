@@ -1,26 +1,26 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\Tests\ValueObject\Section;
+namespace PlexApi\Tests\Unit\ValueObject\Section;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\Section\Dto;
-use PlexApi\ValueObject\Section\DtoList;
+use PlexApi\ValueObject\Section\Directory;
+use PlexApi\ValueObject\Section\DirectoryList;
 
 /**
- * @covers \PlexApi\ValueObject\Section\DtoList
+ * @covers \PlexApi\ValueObject\Section\DirectoryList
  * @covers \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\Location\Dto
- * @uses   \PlexApi\ValueObject\Location\DtoList
- * @uses   \PlexApi\ValueObject\Section\Dto
- * @uses   \PlexApi\ValueObject\Section\DtoList
+ * @uses   \PlexApi\ValueObject\Location
+ * @uses   \PlexApi\ValueObject\LocationList
+ * @uses   \PlexApi\ValueObject\Section\Directory
+ * @uses   \PlexApi\ValueObject\Section\DirectoryList
  */
-class DtoListTest extends TestCase
+class DirectoryListTest extends TestCase
 {
     public function testAdd() : void
     {
-        $list = DtoList::create();
+        $list = DirectoryList::create();
 
-        $list->add($this->createMock(Dto::class));
+        $list->add($this->createMock(Directory::class));
 
         $this->assertCount(1, $list);
     }
@@ -55,6 +55,6 @@ class DtoListTest extends TestCase
             ],
         ];
 
-        $this->assertCount(2, DtoList::createFromArray([$data, $data]));
+        $this->assertCount(2, DirectoryList::createFromArray([$data, $data]));
     }
 }

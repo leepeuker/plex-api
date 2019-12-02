@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\ValueObject\Location;
+namespace PlexApi\ValueObject;
 
-class Dto
+class Location
 {
     private int $id;
 

@@ -4,7 +4,7 @@ test_phpunit:
 	vendor/bin/phpunit -c ./phpunit.xml --testsuite unit
 
 test_phpstan:
-	vendor/bin/phpstan analyse src tests --level max
+	vendor/bin/phpstan analyse -c phpstan.neon src tests --level max
 
 test_psalm:
 	vendor/bin/psalm --show-info=false

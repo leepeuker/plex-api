@@ -2,9 +2,9 @@
 
 namespace PlexApi\ValueObject\Section;
 
-use PlexApi\ValueObject\Location;
+use PlexApi\ValueObject\LocationList;
 
-class Dto
+class Directory
 {
     private string $agent;
 
@@ -28,7 +28,7 @@ class Dto
 
     private string $language;
 
-    private Location\DtoList $locations;
+    private LocationList $locations;
 
     private bool $refreshing;
 
@@ -66,7 +66,7 @@ class Dto
         bool $content,
         bool $directory,
         int $contentChangedAt,
-        Location\DtoList $locations
+        LocationList $locations
     ) {
         $this->allowSync = $allowSync;
         $this->art = $art;
@@ -112,7 +112,7 @@ class Dto
             (bool)$sections['content'],
             (bool)$sections['directory'],
             (int)$sections['contentChangedAt'],
-            Location\DtoList::createFromArray((array)$sections['Location']),
+            LocationList::createFromArray((array)$sections['Location']),
         );
     }
 
@@ -151,7 +151,7 @@ class Dto
         return $this->language;
     }
 
-    public function getLocations() : Location\DtoList
+    public function getLocations() : LocationList
     {
         return $this->locations;
     }

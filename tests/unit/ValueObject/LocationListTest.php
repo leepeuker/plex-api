@@ -1,23 +1,23 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\Tests\ValueObject\Location;
+namespace PlexApi\Tests\Unit\ValueObject;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\Location\Dto;
-use PlexApi\ValueObject\Location\DtoList;
+use PlexApi\ValueObject\Location;
+use PlexApi\ValueObject\LocationList;
 
 /**
- * @covers \PlexApi\ValueObject\Location\DtoList
+ * @covers \PlexApi\ValueObject\LocationList
  * @covers \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\Location\Dto
+ * @uses   \PlexApi\ValueObject\Location
  */
-class DtoListTest extends TestCase
+class LocationListTest extends TestCase
 {
     public function testAdd() : void
     {
-        $list = DtoList::create();
+        $list = LocationList::create();
 
-        $list->add($this->createMock(Dto::class));
+        $list->add($this->createMock(Location::class));
 
         $this->assertCount(1, $list);
     }
@@ -35,6 +35,6 @@ class DtoListTest extends TestCase
             ],
         ];
 
-        $this->assertCount(2, DtoList::createFromArray($data));
+        $this->assertCount(2, LocationList::createFromArray($data));
     }
 }

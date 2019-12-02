@@ -1,22 +1,22 @@
 <?php declare(strict_types=1);
 
-namespace PlexApi\Tests\ValueObject\Section;
+namespace PlexApi\Tests\Unit\ValueObject\Section;
 
 use PHPUnit\Framework\TestCase;
-use PlexApi\ValueObject\Location\DtoList;
-use PlexApi\ValueObject\Section\Dto;
+use PlexApi\ValueObject\LocationList;
+use PlexApi\ValueObject\Section\Directory;
 
 /**
- * @covers \PlexApi\ValueObject\Section\Dto
+ * @covers \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\AbstractList
- * @uses   \PlexApi\ValueObject\Location\Dto
- * @uses   \PlexApi\ValueObject\Location\DtoList
+ * @uses   \PlexApi\ValueObject\Location
+ * @uses   \PlexApi\ValueObject\LocationList
  */
-class DtoTest extends TestCase
+class DirectoryTest extends TestCase
 {
     private array $data;
 
-    private Dto $dto;
+    private Directory $dto;
 
     public function setUp() : void
     {
@@ -48,7 +48,7 @@ class DtoTest extends TestCase
             ],
         ];
 
-        $this->dto = Dto::createFromArray($this->data);
+        $this->dto = Directory::createFromArray($this->data);
     }
 
     public function testGetAgent() : void
@@ -88,7 +88,7 @@ class DtoTest extends TestCase
 
     public function testGetLocations() : void
     {
-        $this->assertEquals(DtoList::createFromArray($this->data['Location']), $this->dto->getLocations());
+        $this->assertEquals(LocationList::createFromArray((array)$this->data['Location']), $this->dto->getLocations());
     }
 
     public function testGetScannedAt() : void

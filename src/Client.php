@@ -5,7 +5,8 @@ namespace PlexApi;
 use GuzzleHttp\Psr7\Request;
 use Http\Adapter\Guzzle6;
 use Http\Client\HttpClient;
-use PlexApi\ValueObject\Section\DtoList;
+use PlexApi\ValueObject\Section;
+use PlexApi\ValueObject\SectionContent;
 
 class Client
 {
@@ -90,16 +91,18 @@ class Client
         $this->httpClient = $httpClient ?? Guzzle6\Client::createWithConfig(['verify' => false]);
     }
 
-    public function getLibrarySections() : DtoList
+    public function getLibrarySections() : Section\MediaContainer
     {
         $mediaContainer = (array)$this->get('/library/sections')['MediaContainer'];
 
-        return DtoList::createFromArray((array)$mediaContainer['Directory']);
+        return Section\MediaContainer::createFromArray($mediaContainer);
     }
 
-    public function getLibrarySectionsContents(string $sectionKey) : array
+    public function getLibrarySectionsContents(string $sectionKey) : SectionContent\MediaContainer
     {
-        return (array)$this->get('/library/sections/' . $sectionKey . '/all')['MediaContainer'];
+        $mediaContainer = (array)$this->get('/library/sections/' . $sectionKey . '/all')['MediaContainer'];
+
+        return SectionContent\MediaContainer::createFromArray($mediaContainer);
     }
 
     private function get(string $path) : array
