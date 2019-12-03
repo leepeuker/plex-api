@@ -2,6 +2,10 @@
 
 namespace PlexApi\ValueObject;
 
+/**
+ * @method Media[] getIterator() : \ArrayIterator
+ * @psalm-suppress ImplementedReturnTypeMismatch
+ */
 class MediaList extends AbstractList
 {
     public static function create() : self

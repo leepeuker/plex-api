@@ -8,6 +8,7 @@ use PlexApi\ValueObject\Section\MediaContainer;
 
 /**
  * @covers \PlexApi\ValueObject\Section\MediaContainer
+ * @covers \PlexApi\ValueObject\MediaContainer
  * @uses   \PlexApi\ValueObject\Section\Directory
  * @uses   \PlexApi\ValueObject\Section\DirectoryList
  * @uses   \PlexApi\ValueObject\Section\Location

@@ -2,6 +2,10 @@
 
 namespace PlexApi\ValueObject;
 
+/**
+ * @method Part[] getIterator() : \ArrayIterator
+ * @psalm-suppress ImplementedReturnTypeMismatch
+ */
 class PartList extends AbstractList
 {
     public static function create() : self

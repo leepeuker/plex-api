@@ -8,6 +8,7 @@ use PlexApi\ValueObject\SectionContent\MediaContainer;
 
 /**
  * @covers \PlexApi\ValueObject\SectionContent\MediaContainer
+ * @covers \PlexApi\ValueObject\MediaContainer
  * @uses   \PlexApi\ValueObject\MediaType\Show
  * @uses   \PlexApi\ValueObject\MediaType\ShowList
  * @uses   \PlexApi\ValueObject\MediaType\MediaTypeList

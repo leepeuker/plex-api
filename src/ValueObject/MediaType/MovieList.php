@@ -2,6 +2,10 @@
 
 namespace PlexApi\ValueObject\MediaType;
 
+/**
+ * @method Movie[] getIterator() : \ArrayIterator
+ * @psalm-suppress ImplementedReturnTypeMismatch
+ */
 class MovieList extends MediaTypeList
 {
     public static function create() : self

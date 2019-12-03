@@ -2,15 +2,12 @@
 
 namespace PlexApi\ValueObject\SectionContent;
 
+use PlexApi\ValueObject;
 use PlexApi\ValueObject\MediaType\MediaTypeList;
 
-class MediaContainer
+class MediaContainer extends ValueObject\MediaContainer
 {
-    private bool $allowSync;
-
     private string $art;
-
-    private string $identifier;
 
     private int $librarySectionId;
 
@@ -18,15 +15,9 @@ class MediaContainer
 
     private string $librarySectionUuid;
 
-    private string $mediaTagPrefix;
-
-    private int $mediaTagVersion;
-
     private MediaTypeList $metadata;
 
     private ?bool $noCache;
-
-    private int $size;
 
     private string $thumb;
 
@@ -56,15 +47,12 @@ class MediaContainer
         int $viewMode,
         MediaTypeList $metadata
     ) {
-        $this->size = $size;
-        $this->allowSync = $allowSync;
+        parent::__construct($size, $allowSync, $identifier, $mediaTagPrefix, $mediaTagVersion);
+
         $this->art = $art;
-        $this->identifier = $identifier;
         $this->librarySectionId = $librarySectionId;
         $this->librarySectionTitle = $librarySectionTitle;
         $this->librarySectionUuid = $librarySectionUuid;
-        $this->mediaTagPrefix = $mediaTagPrefix;
-        $this->mediaTagVersion = $mediaTagVersion;
         $this->noCache = $noCache;
         $this->thumb = $thumb;
         $this->title1 = $title1;
@@ -101,11 +89,6 @@ class MediaContainer
         return $this->art;
     }
 
-    public function getIdentifier() : string
-    {
-        return $this->identifier;
-    }
-
     public function getLibrarySectionId() : int
     {
         return $this->librarySectionId;
@@ -116,24 +99,9 @@ class MediaContainer
         return $this->librarySectionUuid;
     }
 
-    public function getMediaTagPrefix() : string
-    {
-        return $this->mediaTagPrefix;
-    }
-
-    public function getMediaTagVersion() : int
-    {
-        return $this->mediaTagVersion;
-    }
-
     public function getMetadata() : MediaTypeList
     {
         return $this->metadata;
-    }
-
-    public function getSize() : int
-    {
-        return $this->size;
     }
 
     public function getThumb() : string
@@ -159,11 +127,6 @@ class MediaContainer
     public function getViewMode() : int
     {
         return $this->viewMode;
-    }
-
-    public function isAllowSync() : bool
-    {
-        return $this->allowSync;
     }
 
     public function isLibrarySectionTitle() : string
