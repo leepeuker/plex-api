@@ -17,6 +17,10 @@ $result = $client->getLibrarySections();
 
 print_r($result);
 ```
+#### Plex Authentication
+You need an authentication token from Plex to talk with the api. 
+
+Either add your `username` and `password` to the client configuration, so the script can request a token from plex, or add the `token` directly instead.
 
 #### Configuration
 All available configuration options (with default values)
@@ -38,7 +42,3 @@ $config = [
 
 $client = new \PlexApi\Client($config);
 ```
-#### Plex Authentication
-You need an authentication token from Plex to talk with the api. 
-
-Either add your `username` and `password` to the client configuration, so the script can request a token from plex, or add the `token` directly instead.
