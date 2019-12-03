@@ -2,7 +2,9 @@
 ___
 
 #### Installing via Composer
-`composer require leepe/plex-api`
+```
+composer require leepe/plex-api
+```
 
 #### Example use
 ```
