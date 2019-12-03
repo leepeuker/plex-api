@@ -98,7 +98,7 @@ class Client
         return Section\MediaContainer::createFromArray($mediaContainer);
     }
 
-    public function getLibrarySectionsContents(string $sectionKey) : SectionContent\MediaContainer
+    public function getLibrarySectionContent(string $sectionKey) : SectionContent\MediaContainer
     {
         $mediaContainer = (array)$this->get('/library/sections/' . $sectionKey . '/all')['MediaContainer'];
 
