@@ -9,11 +9,11 @@ class ShowList extends MediaTypeList
         return new self();
     }
 
-    public static function createFromArray(array $shows) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
 
-        foreach ($shows as $show) {
+        foreach ($data as $show) {
             $list->add(Show::createFromArray((array)$show));
         }
 

@@ -9,10 +9,10 @@ class MediaList extends AbstractList
         return new self();
     }
 
-    public static function createFromArray(array $allMedia) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
-        foreach ($allMedia as $media) {
+        foreach ($data as $media) {
             $list->add(Media::createFromArray((array)$media));
         }
 

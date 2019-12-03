@@ -15,22 +15,22 @@ class LocationList extends AbstractList
         return new self();
     }
 
-    public static function createFromArray(array $sections) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
 
         /**
          * @psalm-suppress MixedAssignment
          */
-        foreach ($sections as $section) {
-            $list->add(Location::createFromArray((array)$section));
+        foreach ($data as $location) {
+            $list->add(Location::createFromArray((array)$location));
         }
 
         return $list;
     }
 
-    public function add(Location $section) : void
+    public function add(Location $location) : void
     {
-        $this->data[] = $section;
+        $this->data[] = $location;
     }
 }

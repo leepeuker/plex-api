@@ -128,38 +128,38 @@ class Movie extends MediaType
         $this->role = $role;
     }
 
-    public static function createFromArray(array $element) : self
+    public static function createFromArray(array $data) : self
     {
         return new self(
-            (string)$element['ratingKey'],
-            (string)$element['key'],
-            (string)$element['guid'],
-            isset($element['studio']) === true ? (string)$element['studio'] : null,
-            (string)$element['title'],
-            isset($element['titleSort']) === true ? (string)$element['titleSort'] : null,
-            isset($element['contentRating']) === true ? (string)$element['contentRating'] : null,
-            isset($element['summary']) === true ? (string)$element['summary'] : null,
-            isset($element['rating']) === true ? (float)$element['rating'] : null,
-            isset($element['viewCount']) === true ? (int)$element['viewCount'] : null,
-            isset($element['lastViewedAt']) === true ? (int)$element['lastViewedAt'] : null,
-            isset($element['year']) === true ? (int)$element['year'] : null,
-            isset($element['tagline']) === true ? (string)$element['tagline'] : null,
-            (string)$element['thumb'],
-            isset($element['art']) === true ? (string)$element['art'] : null,
-            isset($element['duration']) === true ? (int)$element['duration'] : null,
-            isset($element['originallyAvailableAt']) === true ? (string)$element['originallyAvailableAt'] : null,
-            (int)$element['addedAt'],
-            (int)$element['updatedAt'],
-            isset($element['chapterSource']) === true ? (string)$element['chapterSource'] : null,
-            isset($element['primaryExtraKey']) === true ? (string)$element['primaryExtraKey'] : null,
-            isset($element['ratingImage']) === true ? (string)$element['ratingImage'] : null,
-            MediaList::createFromArray((array)$element['Media']),
-            isset($element['Genre']) === true ? (array)$element['Genre'] : null,
-            isset($element['Director']) === true ? (array)$element['Director'] : null,
-            isset($element['Writer']) === true ? (array)$element['Writer'] : null,
-            isset($element['country']) === true ? (array)$element['country'] : null,
-            isset($element['Collection']) === true ? (array)$element['Collection'] : null,
-            isset($element['Role']) === true ? (array)$element['Role'] : null
+            (string)$data['ratingKey'],
+            (string)$data['key'],
+            (string)$data['guid'],
+            isset($data['studio']) === true ? (string)$data['studio'] : null,
+            (string)$data['title'],
+            isset($data['titleSort']) === true ? (string)$data['titleSort'] : null,
+            isset($data['contentRating']) === true ? (string)$data['contentRating'] : null,
+            isset($data['summary']) === true ? (string)$data['summary'] : null,
+            isset($data['rating']) === true ? (float)$data['rating'] : null,
+            isset($data['viewCount']) === true ? (int)$data['viewCount'] : null,
+            isset($data['lastViewedAt']) === true ? (int)$data['lastViewedAt'] : null,
+            isset($data['year']) === true ? (int)$data['year'] : null,
+            isset($data['tagline']) === true ? (string)$data['tagline'] : null,
+            (string)$data['thumb'],
+            isset($data['art']) === true ? (string)$data['art'] : null,
+            isset($data['duration']) === true ? (int)$data['duration'] : null,
+            isset($data['originallyAvailableAt']) === true ? (string)$data['originallyAvailableAt'] : null,
+            (int)$data['addedAt'],
+            (int)$data['updatedAt'],
+            isset($data['chapterSource']) === true ? (string)$data['chapterSource'] : null,
+            isset($data['primaryExtraKey']) === true ? (string)$data['primaryExtraKey'] : null,
+            isset($data['ratingImage']) === true ? (string)$data['ratingImage'] : null,
+            MediaList::createFromArray((array)$data['Media']),
+            isset($data['Genre']) === true ? (array)$data['Genre'] : null,
+            isset($data['Director']) === true ? (array)$data['Director'] : null,
+            isset($data['Writer']) === true ? (array)$data['Writer'] : null,
+            isset($data['Country']) === true ? (array)$data['Country'] : null,
+            isset($data['Collection']) === true ? (array)$data['Collection'] : null,
+            isset($data['Role']) === true ? (array)$data['Role'] : null
         );
     }
 

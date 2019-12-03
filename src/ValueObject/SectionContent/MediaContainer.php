@@ -92,7 +92,7 @@ class MediaContainer
             (string)$sections['title2'],
             (string)$sections['viewGroup'],
             (int)$sections['viewMode'],
-            MediaTypeList::createFromArrayWithType((array)$sections['Metadata'], (string)$sections['viewGroup']),
+            MediaTypeList::createFromArrayAndType((array)$sections['Metadata'], (string)$sections['viewGroup']),
         );
     }
 

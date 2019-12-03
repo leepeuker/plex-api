@@ -36,16 +36,16 @@ class MediaContainer
         $this->directories = $directories;
     }
 
-    public static function createFromArray(array $sections) : self
+    public static function createFromArray(array $data) : self
     {
         return new self(
-            (int)$sections['size'],
-            (bool)$sections['allowSync'],
-            (string)$sections['identifier'],
-            (string)$sections['mediaTagPrefix'],
-            (int)$sections['mediaTagVersion'],
-            (string)$sections['title1'],
-            DirectoryList::createFromArray((array)$sections['Directory']),
+            (int)$data['size'],
+            (bool)$data['allowSync'],
+            (string)$data['identifier'],
+            (string)$data['mediaTagPrefix'],
+            (int)$data['mediaTagVersion'],
+            (string)$data['title1'],
+            DirectoryList::createFromArray((array)$data['Directory']),
         );
     }
 

@@ -88,29 +88,29 @@ class Directory
         $this->locations = $locations;
     }
 
-    public static function createFromArray(array $sections) : self
+    public static function createFromArray(array $data) : self
     {
         return new self(
-            (bool)$sections['allowSync'],
-            (string)$sections['art'],
-            (string)$sections['composite'],
-            (bool)$sections['filters'],
-            (bool)$sections['refreshing'],
-            (string)$sections['thumb'],
-            (string)$sections['key'],
-            (string)$sections['type'],
-            (string)$sections['title'],
-            (string)$sections['agent'],
-            (string)$sections['scanner'],
-            (string)$sections['language'],
-            (string)$sections['uuid'],
-            (int)$sections['updatedAt'],
-            (int)$sections['createdAt'],
-            (int)$sections['scannedAt'],
-            (bool)$sections['content'],
-            (bool)$sections['directory'],
-            (int)$sections['contentChangedAt'],
-            LocationList::createFromArray((array)$sections['Location']),
+            (bool)$data['allowSync'],
+            (string)$data['art'],
+            (string)$data['composite'],
+            (bool)$data['filters'],
+            (bool)$data['refreshing'],
+            (string)$data['thumb'],
+            (string)$data['key'],
+            (string)$data['type'],
+            (string)$data['title'],
+            (string)$data['agent'],
+            (string)$data['scanner'],
+            (string)$data['language'],
+            (string)$data['uuid'],
+            (int)$data['updatedAt'],
+            (int)$data['createdAt'],
+            (int)$data['scannedAt'],
+            (bool)$data['content'],
+            (bool)$data['directory'],
+            (int)$data['contentChangedAt'],
+            LocationList::createFromArray((array)$data['Location']),
         );
     }
 

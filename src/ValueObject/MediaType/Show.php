@@ -102,32 +102,32 @@ class Show extends MediaType
         $this->roles = $roles;
     }
 
-    public static function createFromArray(array $element) : self
+    public static function createFromArray(array $data) : self
     {
         return new self(
-            (string)$element['ratingKey'],
-            (string)$element['key'],
-            (string)$element['guid'],
-            isset($element['studio']) === true ? (string)$element['studio'] : null,
-            (string)$element['title'],
-            isset($element['contentRating']) === true ? (string)$element['contentRating'] : null,
-            isset($element['summary']) === true ? (string)$element['summary'] : null,
-            (int)$element['index'],
-            isset($element['rating']) === true ? (float)$element['rating'] : null,
-            isset($element['year']) === true ? (int)$element['year'] : null,
-            (string)$element['thumb'],
-            isset($element['art']) === true ? (string)$element['art'] : null,
-            isset($element['banner']) === true ? (string)$element['banner'] : null,
-            isset($element['theme']) === true ? (string)$element['theme'] : null,
-            isset($element['duration']) === true ? (int)$element['duration'] : null,
-            (string)$element['originallyAvailableAt'],
-            (int)$element['leafCount'],
-            (int)$element['viewedLeafCount'],
-            (int)$element['childCount'],
-            (int)$element['addedAt'],
-            (int)$element['updatedAt'],
-            isset($element['Genre']) === true ? (array)$element['Genre'] : null,
-            isset($element['Role']) === true ? (array)$element['Role'] : null,
+            (string)$data['ratingKey'],
+            (string)$data['key'],
+            (string)$data['guid'],
+            isset($data['studio']) === true ? (string)$data['studio'] : null,
+            (string)$data['title'],
+            isset($data['contentRating']) === true ? (string)$data['contentRating'] : null,
+            isset($data['summary']) === true ? (string)$data['summary'] : null,
+            (int)$data['index'],
+            isset($data['rating']) === true ? (float)$data['rating'] : null,
+            isset($data['year']) === true ? (int)$data['year'] : null,
+            (string)$data['thumb'],
+            isset($data['art']) === true ? (string)$data['art'] : null,
+            isset($data['banner']) === true ? (string)$data['banner'] : null,
+            isset($data['theme']) === true ? (string)$data['theme'] : null,
+            isset($data['duration']) === true ? (int)$data['duration'] : null,
+            (string)$data['originallyAvailableAt'],
+            (int)$data['leafCount'],
+            (int)$data['viewedLeafCount'],
+            (int)$data['childCount'],
+            (int)$data['addedAt'],
+            (int)$data['updatedAt'],
+            isset($data['Genre']) === true ? (array)$data['Genre'] : null,
+            isset($data['Role']) === true ? (array)$data['Role'] : null,
         );
     }
 

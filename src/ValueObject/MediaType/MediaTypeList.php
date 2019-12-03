@@ -6,7 +6,7 @@ use PlexApi\ValueObject\AbstractList;
 
 abstract class MediaTypeList extends AbstractList
 {
-    public static function createFromArrayWithType(array $data, string $type) : MediaTypeList
+    public static function createFromArrayAndType(array $data, string $type) : MediaTypeList
     {
         switch ($type) {
             case Show::TYPE:

@@ -9,11 +9,11 @@ class MovieList extends MediaTypeList
         return new self();
     }
 
-    public static function createFromArray(array $movies) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
 
-        foreach ($movies as $movie) {
+        foreach ($data as $movie) {
             $list->add(Movie::createFromArray((array)$movie));
         }
 

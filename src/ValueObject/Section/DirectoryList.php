@@ -15,22 +15,22 @@ class DirectoryList extends AbstractList
         return new self();
     }
 
-    public static function createFromArray(array $sections) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
 
         /**
          * @psalm-suppress MixedAssignment
          */
-        foreach ($sections as $section) {
-            $list->add(Directory::createFromArray((array)$section));
+        foreach ($data as $directory) {
+            $list->add(Directory::createFromArray((array)$directory));
         }
 
         return $list;
     }
 
-    public function add(Directory $section) : void
+    public function add(Directory $directory) : void
     {
-        $this->data[] = $section;
+        $this->data[] = $directory;
     }
 }

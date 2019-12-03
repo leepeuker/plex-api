@@ -14,11 +14,11 @@ class Location
         $this->path = $path;
     }
 
-    public static function createFromArray(array $sections) : self
+    public static function createFromArray(array $data) : self
     {
         return new self(
-            (int)$sections['id'],
-            (string)$sections['path']
+            (int)$data['id'],
+            (string)$data['path']
         );
     }
 

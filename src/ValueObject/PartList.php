@@ -9,11 +9,11 @@ class PartList extends AbstractList
         return new self();
     }
 
-    public static function createFromArray(array $movies) : self
+    public static function createFromArray(array $data) : self
     {
         $list = self::create();
 
-        foreach ($movies as $part) {
+        foreach ($data as $part) {
             $list->add(Part::createFromArray((array)$part));
         }
 
