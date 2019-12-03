@@ -21,7 +21,7 @@ print_r($result);
 You need an authentication token from Plex to talk with the api. 
 
 Either add your `username` and `password` to the client configuration, so the script can request a token from plex for you, or add a `token` directly instead. 
-You can see how to find/create a token [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/). 
+You can read how to find/create a token yourself [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/). 
 
 #### Configuration
 All available configuration options (with default values)
